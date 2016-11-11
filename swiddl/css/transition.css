@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+/* Felice CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+/* Transition */
+.btn, .navbar .brand, .navbar .nav > li > a, .navbar .nav > li > a i, .dropdown-menu > li > a, .navbar-search .search-query, .navbar-search button.btn, .thumbnail .view-thumb i, .item .view-thumb i, .thumbnails.featured i, .thumbnails li, .social-links a i, .nav > li > a:hover, .nav > li > a:focus, .pricing, .pricing i, .pricing .price {
+	transition: all linear 0.25s;
+	-ms-transition: all linear 0.25s;
+	-moz-transition: all linear 0.25s;
+	-webkit-transition: all linear 0.25s;
+	-o-transition: all linear 0.25s;
+}

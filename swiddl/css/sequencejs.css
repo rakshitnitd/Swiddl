@@ -1,0 +1,363 @@
+@charset "utf-8";
+/* CSS Document */
+/* Felice CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+/* Container */
+.sequence-slider {
+	margin-top: 0;
+	margin-bottom: 40px;
+	background: none;
+	position: relative;
+}
+#sequence {
+	margin: 0 auto;
+	width: 100%;
+	height: 600px;
+	overflow: hidden;
+	position: relative;
+}
+#sequence > .sequence-canvas {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+#sequence > .sequence-canvas > li {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+/* Sequence Navigation */
+.sequence-next, .sequence-prev {
+	margin-top: -25px;
+	width: 50px;
+	height: 50px;
+	background: rgba(0,0,0,0.1);
+	line-height: 50px;
+	color: #FFF;
+	text-align: center;
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	bottom: 0;
+	z-index: 1000;
+	transition-duration: 0.25s;
+	-ms-transition-duration: 0.25s;
+	-moz-transition-duration: 0.25s;
+	-webkit-transition-duration: 0.25s;
+	-o-transition-duration: 0.25s;
+}
+.sequence-next:hover, .sequence-prev:hover {
+	background: rgba(0,0,0,0.25);
+	opacity: 1;
+}
+.sequence-prev {
+	margin-left: -50px;
+	left: 50%;
+}
+.sequence-next {
+	margin-right: -50px;
+	right: 50%;
+}
+/* Sequence Pagination */
+.sequence-pagination {
+	margin: 0 0 0 -15px;
+	list-style: none;
+	display: none;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	z-index: 10;
+	transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+}
+.sequence-pagination li {
+	width: 10px;
+	height: 10px;
+	float: left;
+}
+.sequence-pagination li a {
+	width: 10px;
+	height: 10px;
+	display: block;
+}
+.sequence-pagination li a i {
+	width: 10px;
+	height: 10px;
+	font-size: 8px;
+	display: block;
+	line-height: 10px;
+	text-align: center;
+	color: rgba(255,255,255,0.5);
+	cursor: pointer;
+	transition-duration: 0.25s;
+	-ms-transition-duration: 0.25s;
+	-moz-transition-duration: 0.25s;
+	-webkit-transition-duration: 0.25s;
+	-o-transition-duration: 0.25s;
+	-webkit-transition-property: color;
+	-moz-transition-property: color;
+	-ms-transition-property: color;
+	-o-transition-property: color;
+	transition-property: color;
+}
+.sequence-pagination li a:hover i {
+	color: rgba(255,255,255,0.75);
+}
+.sequence-pagination li.current a i {
+	color: rgba(255,255,255,1);
+}
+/* Sequence Content Title */
+.title {
+	height: 40px;
+	color: #FFF;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: 50;
+	transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-delay: 0.5s;
+	-ms-transition-delay: 0.5s;
+	-moz-transition-delay: 0.5s;
+	-webkit-transition-delay: 0.5s;
+	-o-transition-delay: 0.5s;
+}
+.animate-in .title {
+	opacity: 1;
+}
+.animate-out .title {
+	opacity: 0;
+}
+/* Sequence Content SubTitle */
+.subtitle {
+	margin-bottom: 0;
+	height: 40px;
+	font: 300 18px/20px Roboto Condensed, Arial, Helvetica, sans-serif;
+	color: rgba(255,255,255,0.75);
+	text-transform: uppercase;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: 50;
+	transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-delay: 0.25s;
+	-ms-transition-delay: 0.25s;
+	-moz-transition-delay: 0.25s;
+	-webkit-transition-delay: 0.25s;
+	-o-transition-delay: 0.25s;
+}
+.animate-in .subtitle {
+	opacity: 1;
+}
+.animate-out .subtitle {
+	opacity: 0;
+}
+/* Sequence Content Button */
+.more-info {
+	padding: 10px 20px;
+	background: #333;
+	color: #FFF;
+	opacity: 0;
+	position: absolute;
+	z-index: 50;
+	transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+}
+.more-info:hover {
+	color: #FFF;
+}
+.animate-in .more-info {
+	opacity: 1;
+}
+.animate-out .more-info {
+	opacity: 0;
+}
+/* Sequence Content Image */
+.main-image {
+	width: 100%;
+	opacity: 0;
+	position: absolute;
+}
+.animate-in .main-image {
+	opacity: 1;
+	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	transition-duration: 1s;
+}
+.animate-out .main-image {
+	opacity: 0;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+/* Sequence Content Background */
+.tr-bg {
+	width: 0;
+	height: 100%;
+	background: rgba(0,0,0,0.1);
+	opacity: 0;
+	position: absolute;
+	z-index: 1;
+	transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-webkit-transition-duration: 1s;
+	-o-transition-duration: 1s;
+}
+.animate-in .tr-bg {
+	opacity: 1;
+}
+.animate-out .tr-bg {
+	opacity: 0;
+}
+/* ----- Start Sequence Animation ----- */
+
+
+
+/* Sequence Content Title */
+.title {
+	top: 42%;
+	left: 50%;
+}
+.animate-in .title {
+	left: 60%;
+}
+.animate-out .title {
+	left: 70%;
+}
+/* Sequence Content SubTitle */
+.subtitle {
+	top: 52%;
+	left: 50%;
+}
+.animate-in .subtitle {
+	left: 60%;
+}
+.animate-out .subtitle {
+	left: 70%;
+}
+/* Sequence Content Button */
+.more-info {
+	top: 64%;
+	left: 50%;
+}
+.animate-in .more-info {
+	left: 60%;
+}
+.animate-out .more-info {
+	left: 70%;
+}
+/* Sequence Content Image */
+.main-image {
+	top: 0;
+	left: 0;
+}
+.animate-in .main-image {
+	left: 0;
+}
+.animate-out .main-image {
+	left: 0;
+}
+.tr-bg {
+	top: 0;
+	right: 0;
+}
+.animate-in .tr-bg {
+	width: 50%;
+}
+.animate-out .tr-bg {
+	width: 100%;
+}
+
+
+
+/* ----- End Sequence Animation ----- */
+
+
+
+
+
+/* Desktop large layout */
+@media (min-width: 1210px) {
+}
+
+/* Desktop small layout */
+@media (min-width: 980px) and (max-width: 1209px) {
+#sequence {
+	height: 500px;
+}
+}
+
+/* Tablet layout */
+@media (min-width: 768px) and (max-width: 979px) {
+#sequence {
+	height: 400px;
+}
+}
+
+/* Mobile landscape layout */
+@media (min-width: 480px) and (max-width: 767px) {
+.sequence-slider {
+	margin-top: 70px;
+}
+#sequence {
+	height: 260px;
+}
+.title, .animate-in .title, .animate-out .title {
+	width: 100%;
+	background: rgba(0,0,0,0.75);
+	text-align: center;
+	left: 0;
+}
+.subtitle {
+	display: none;
+}
+.animate-in .more-info {
+	left: 0;
+}
+}
+
+/* Mobile portrait layout */
+@media (max-width: 479px) {
+.sequence-slider {
+	margin-top: 50px;
+}
+#sequence {
+	height: 170px;
+}
+.title, .animate-in .title, .animate-out .title {
+	width: 100%;
+	background: rgba(0,0,0,0.75);
+	text-align: center;
+	left: 0;
+}
+.subtitle {
+	display: none;
+}
+.animate-in .more-info {
+	left: 0;
+}
+.more-info {
+	top: 20px;
+}
+}
